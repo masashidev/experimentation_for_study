@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
+
 <h1>Microposts</h1>
 
 <div id="microposts">
   <% @microposts.each do |micropost| %>
-    <%= render micropost %>
-    <p>
-      <%= link_to "Show this micropost", micropost %>
-    </p>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item"><%= link_to micropost.body, micropost %></li>
+  </ul>
   <% end %>
 </div>
 
