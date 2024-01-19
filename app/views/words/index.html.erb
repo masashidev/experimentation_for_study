@@ -1,0 +1,16 @@
+<h1>Words</h1>
+<%# link_to "New word", new_word_path %>
+<div id="words">
+  <% @words.each do |word| %>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= link_to word.word, word %></th>
+      <th><%= link_to "Edit", edit_word_path(word) %></th>
+      <th><%= link_to "Destroy", word, method: :delete, data: { confirm: "Are you sure?" } %></th>
+    </tr>
+  </thead>
+  <% end %>
+</div>
+
+<%= render "form" %>
