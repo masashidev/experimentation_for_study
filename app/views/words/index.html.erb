@@ -1,4 +1,4 @@
-<h1>Words</h1>
+<h1>Word List </h1>
 <%# link_to "New word", new_word_path %>
 <div id="words">
   <% @words.each do |word| %>
@@ -7,7 +7,7 @@
     <tr>
       <th><%= link_to word.word, word %></th>
       <th><%= link_to "Edit", edit_word_path(word) %></th>
-      <th><%= link_to "Destroy", word, method: :delete, data: { confirm: "Are you sure?" } %></th>
+      <th><%= button_to "Destroy", word, method: :delete, data: { turbo_confirm: "Are you sure?" } %></th>
     </tr>
   </thead>
   <% end %>
