@@ -3,8 +3,16 @@
 <%= render @micropost %>
 
 <div>
-  <%= link_to "Edit this micropost", edit_micropost_path(@micropost) %> |
   <%= link_to "Back to microposts", microposts_path %>
-
-  <%= button_to "Destroy this micropost", @micropost, method: :delete %>
 </div>
+
+<br>
+<% if user_signed_in? %>
+  <ul class="list-group">
+  <li class="list-group-item">
+    <%= link_to "Edit this micropost", edit_micropost_path(@micropost) %>
+  </li>
+  <li class="list-group-item">
+    <%= button_to "Destroy this micropost", @micropost, method: :delete %>
+  </li>
+<% end %>
